@@ -1,21 +1,16 @@
 import React from "react";
-import { Card } from "./Card";
+import { Card } from "./card/Card";
 
-export const ContactList = () => {
+export const ContactList = ({ users }) => {
   return (
     <div className="row">
-      <div className="col">
-        {/* spinner */}
-        <div class="d-flex justify-content-center text-primary">
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>
+      {/* spinner */}
 
-        {/* cards  */}
-
-        <Card />
-      </div>
+      {users.length ? (
+        users.map((usr, i) => <Card key={i} user={usr} />)
+      ) : (
+        <h5>User not found</h5>
+      )}
     </div>
   );
 };
