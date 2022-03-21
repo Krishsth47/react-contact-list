@@ -68,7 +68,7 @@ const App = () => {
         <hr />
         {/* user count */}
         <div className="row">
-          <div className="col"> {contacts.length} users found</div>
+          <div className="col"> {contacts.length} users found !</div>
         </div>
 
         {loading && <Spinner />}
